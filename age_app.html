@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Birth Year</title>
+</head>
+<body>
+	<center>
+		<form style="margin-top: 100px">
+			<input style="height: 38px; width: 75px; padding-left: 10px;" placeholder="Month" type="number" name="number" id="month"/>
+			<!-- <input style="height: 38px;" type="button" value="Find Month" id="button" /><br><br> -->
+
+			<input style="height: 38px; width: 75px; padding-left: 10px;" placeholder="Day" type="number" name="number" id="day"/>
+			<!-- <input style="height: 38px;" type="button" value="Find Day" id="button" /><br><br> -->
+			<input style="height: 38px; width: 75px; padding-left: 10px;" placeholder="Year" type="number" name="number" id="year"/><br><br>
+			<input style="height: 38px;" type="button" value="Find Year" id="button" /><br>
+			<center><p id="year"><strong><h1>Year</h1></strong></p></center>
+  		</form>
+	</center>
+
+
+<script type= "text/javascript">
+
+function calculate() {
+
+	var myMonth = document.getElementById("month").value;
+	var myDay = document.getElementById("day").value;
+	var myYear = document.getElementById("year").value;
+	var date = new Date();
+	var month = date.getMonth();
+	var day = date.getDate();
+	var year = date.getFullYear();
+	var monthTotal = month - myMonth;
+	var dayTotal = day - myDay;
+	var yearTotal = year - myYear;
+
+	//console.log(myMonth);
+	//console.log(myDay);
+	//console.log(myYear);
+	//console.log(month);
+	//console.log(day);
+	//console.log(year);
+	console.log(monthTotal);
+	console.log(dayTotal);
+	console.log(yearTotal);
+
+	if (myMonth == "" || myMonth == 0 || myMonth > 12) {
+		//|| myDay > 31 || myDay == "" || myYear == "") {
+		alert("Please type a month from 1 to 12 buddy!");
+		return;
+
+	} else if (myDay > 31 || myDay == "") {
+		alert("Please type a day from 1 to 31 pal!");
+		return;
+
+	} else if (myYear == "") {
+		alert("Please type a year friend!");
+		return;
+
+	} else if (monthTotal > 0) {
+			yearTotal;
+			return;
+
+	} else if (monthTotal == 0 && dayTotal == 0) {
+			yearTotal;
+			return;
+
+	} else { 
+			yearTotal--;
+			return;
+
+	}
+
+	console.log(yearTotal);
+
+	var birthYear = calculate();
+
+
+	document.getElementById("year").style.display = "block";
+	document.getElementById("year").innerHTML = calculate();
+
+
+}
+
+
+
+
+document.getElementById("button").onclick = function() {calculate(); }
+
+
+
+	
+</script>
+
+
+	
+
+</body>
+</html>
+
+
+
+
